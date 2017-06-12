@@ -77,7 +77,13 @@ app.get('/', function (req, res) {
 });
 
 app.get('/ip', function (req, res) {
-  res.send(req.ip + '|' + req.ips + '|' + req.connection.remoteAddress);
+    var getClientAddress = function (req) {
+        return (req.headers['x-forwarded-for'] || '').split(',')[0]
+            || req.connection.remoteAddress;
+    };
+
+
+    res.send(getClientAddress());
 });
 
 app.get('/crossdomain.xml', function (req, res) {
