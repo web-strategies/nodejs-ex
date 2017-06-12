@@ -77,7 +77,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/ip', function (req, res) {
-  res.send(req.ip);
+  res.send(req.ip + '|' + req.ips + '|' + req.connection.remoteAddress);
 });
 
 app.get('/crossdomain.xml', function (req, res) {
