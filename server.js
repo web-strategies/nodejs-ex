@@ -83,7 +83,7 @@ app.get('/ip', function (req, res) {
     };
 
 
-    res.send(getClientAddress());
+    res.send(getClientAddress(req));
 });
 
 app.get('/crossdomain.xml', function (req, res) {
