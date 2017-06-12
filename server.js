@@ -81,7 +81,7 @@ app.get('/ip', function (req, res) {
 });
 
 app.get('/crossdomain.xml', function (req, res) {
-  res.sendFile('crossdomain.xml');
+  res.sendFile(__dirname + '/crossdomain.xml');
 });
 
 app.get('/pagecount', function (req, res) {
