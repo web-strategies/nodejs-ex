@@ -77,7 +77,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/ip', function (req, res) {
-  res.write("hello");
+  res.send('hello');
 });
 
 app.get('/pagecount', function (req, res) {
